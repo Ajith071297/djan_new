@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+    border-collapse: collapse;
+    margin-top: 10px;
+    }
+    table,th,td{
+    border: 1px solid red;
+    padding: 10px;
+    }
+    </style>
+<body>
+    <h1>Ajith</h1>
+    <br>
+    {{users}} <!--variable declaration-->
+
+    {% comment %}
+
+    {{users}}
+
+    {% endcomment %}
+
+    <table>
+        <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>18+</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>
+        {% if user.age >= 18 %}
+        Yes
+        {% else %}
+        No
+        {% endif %}
+        </td>
+        </tr>
+        {% endfor %}
+        </table>
+        
+</body>
+</html>
